@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Dropdown</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.2.3/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Hide the default select element */
+    .custom-select select {
+      display: none;
+    }
+
+    /* Style for the custom dropdown */
+    .custom-select .select-selected {
+      @apply bg-gray-100 border border-gray-300 rounded-lg p-2 cursor-pointer text-left;
+      width: 200px;
+    }
+
+    /* Style for the dropdown options */
+    .custom-select .select-items {
+      @apply absolute bg-white border border-gray-300 rounded-lg shadow-lg z-10 w-full max-h-60 overflow-auto;
+      display: none;
+    }
+
+    /* Style for individual options */
+    .custom-select .select-items div {
+      @apply p-2 cursor-pointer hover:bg-gray-200;
+    }
+
+    /* Show dropdown when active */
+    .custom-select .select-selected.select-arrow-active + .select-items {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-purple-300 p-10">
+
+    <select
+    name="options"
+    id="options"
+    className="border border-gray-300 w-custom p-2 rounded"
+    defaultValue=""
+  >
+    <option value="" disabled>Select an option</option>
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+  </select>
+  
+  
+
+</body>
+</html>
